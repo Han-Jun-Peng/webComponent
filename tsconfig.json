@@ -1,0 +1,28 @@
+{
+	"include": ["./src/**/*"],
+	"exclude": ["./src/**/*.test.js", "./src/**/*.test.jsx"],
+	"compilerOptions": {
+		"emitDeclarationOnly": true,
+		"declaration": true,
+		"declarationMap": true,
+		"outFile": "./dist/types/index.d.ts",
+
+		"exactOptionalPropertyTypes": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noUncheckedIndexedAccess": true,
+		"strict": true,
+		"useUnknownInCatchVariables": true,
+
+		"allowArbitraryExtensions": true,
+		"allowImportingTsExtensions": true,
+		"module": "NodeNext",
+		"moduleResolution": "nodenext",
+		"resolveJsonModule": true,
+
+		"allowJs": true,
+		"checkJs": true,
+		"jsx": "react"
+	}
+}
