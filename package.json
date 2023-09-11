@@ -10,15 +10,17 @@
 		"jest"
 	],
 	"type": "module",
-	"main": "./src/index.js",
-	"types": "./dist/types/index.d.ts",
+	"main": "./index.js",
+	"module": "./index.js",
+	"types": "./index.d.ts",
 	"scripts": {
-		"dev": "webpack serve --open --config webpack.dev.js",
-		"build": "webpack",
+		"build": "webpack --config webpack.config.js",
 		"watch": "webpack --watch",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build",
-		"test": "jest"
+		"test": "jest",
+		"ts": "tsc",
+		"ts-index": "tsc --project tsconfig.index.json"
 	},
 	"author": "韩俊鹏",
 	"license": "MIT",
@@ -62,6 +64,7 @@
 		"storybook": "^7.4.0",
 		"style-loader": "^3.3.3",
 		"tailwindcss": "^3.3.3",
+		"ts-loader": "^9.4.4",
 		"typescript": "^5.2.2",
 		"webpack": "^5.88.2",
 		"webpack-cli": "^5.1.4",
@@ -69,11 +72,14 @@
 	},
 	"dependencies": {
 		"@babel/runtime-corejs3": "^7.22.11",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"react": ">=18.2.0",
+		"react-dom": ">=18.2.0"
 	},
 	"files": [
-		"lib/"
+		"./es/",
+		"./index.js",
+		"./index.d.ts",
+		"LICENSE"
 	],
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org/"
@@ -81,5 +87,8 @@
 	"peerDependencies": {
 		"react": ">=18.2.0",
 		"react-dom": ">=18.2.0"
-	}
+	},
+	"sideEffects": [
+		"./src/**/*.css"
+	]
 }

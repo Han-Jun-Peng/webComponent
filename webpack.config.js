@@ -9,7 +9,8 @@ const __dirname = dirname(__filename);
 const config = {
 	mode: "production",
 	devtool: "source-map",
-
+	target: "web",
+	// target: "browserslist",
 	// 路径解析
 	resolve: {
 		alias: {
@@ -19,13 +20,24 @@ const config = {
 	},
 	// 入口
 	entry: {
-		index: "./src/story/**/*.js",
+		word: "./src/story/text/word/word.tsx",
 	},
 	// 出口
 	output: {
-		path: path.resolve(__dirname, "lib"),
-		__filename: "[name].[contenthash].js",
+		path: path.resolve(__dirname, "es"),
+		filename: "[name]/[name].js",
 		clean: true,
+		library: {
+			type: "module",
+		},
+
+		trustedTypes: true,
+	},
+	externals: {
+		react: "react",
+	},
+	experiments: {
+		outputModule: true,
 	},
 	// 加载器
 	module: {
@@ -33,12 +45,14 @@ const config = {
 			{
 				test: /\.[j|t]sx?$/i,
 				exclude: ["/node_modules/"],
-				use: {
-					loader: "babel-loader",
-					options: {
-						cacheDirectory: true,
+				use: [
+					{
+						loader: "babel-loader",
+						options: {
+							cacheDirectory: true,
+						},
 					},
-				},
+				],
 			},
 			{
 				test: /\.css$/i,
@@ -67,10 +81,15 @@ const config = {
 			},
 		],
 	},
+	plugins: [
+		new MiniCssExtractPlugin({
+			filename: "./css/tailwind.css",
+		}),
+	],
 
 	// 优化
 	optimization: {
-		runtimeChunk: "single",
+		// runtimeChunk: "single",
 		splitChunks: {
 			chunks: "all",
 		},

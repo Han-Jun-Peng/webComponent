@@ -1,4 +1,4 @@
-import { test, expect, describe } from "@jest/globals";
+// import { test, expect, describe } from "@jest/globals";
 import getStyleWithcanSelect from "./getStyleWithcanSelect.ts";
 
 describe("getStyleWithcanSelect()", () => {

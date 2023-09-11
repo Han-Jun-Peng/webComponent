@@ -1,14 +1,14 @@
-import React from "react";
-import { memo } from "react";
+import React, { type ReactNode, memo } from "react";
+import "../../../tailwind.css";
 import getStyleWithcanSelect from "../getStyleWithcanSelect.ts";
 
-interface Prop {
-	children?: React.ReactNode;
+export interface WordProp {
+	children?: ReactNode;
 	canSelect?: boolean;
 }
 
-const Word = memo(function Word({ children, canSelect = true }: Prop) {
-	const clssName = ["inline", "font-mono"];
+const WBWord = memo(function Word({ children, canSelect = true }: WordProp) {
+	const clssName = ["inline", "font-mono", "bg-blue-1"];
 	clssName.push(getStyleWithcanSelect(canSelect));
 
 	return (
@@ -18,4 +18,4 @@ const Word = memo(function Word({ children, canSelect = true }: Prop) {
 	);
 });
 
-export default Word;
+export default WBWord;

@@ -1,0 +1,10 @@
+src/
+.browserslistrc
+.gitignore
+*.json
+*.cjs
+tailwind.config.js
+webpack.config.js
+.storybook
+.github
+node_modules
