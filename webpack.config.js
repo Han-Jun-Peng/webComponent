@@ -20,6 +20,7 @@ const config = {
 	},
 	// 入口
 	entry: {
+		entry: "./src/entry.ts",
 		word: "./src/story/text/word/word.tsx",
 	},
 	// 出口

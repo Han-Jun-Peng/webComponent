@@ -1,9 +1,9 @@
+import WBH2 from "./h2.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
-import WBWord from "./word.tsx";
 
 const meta = {
-	title: "行内文本/字母",
-	component: WBWord,
+	title: "块文本/H2",
+	component: WBH2,
 	tags: ["autodocs"],
 	argTypes: {
 		children: {
@@ -15,12 +15,12 @@ const meta = {
 			},
 		},
 	},
-} satisfies Meta<typeof WBWord>;
+} satisfies Meta<typeof WBH2>;
 
-type Story = StoryObj<typeof WBWord>;
+type Story = StoryObj<typeof WBH2>;
 export const Main: Story = {
 	args: {
-		children: "word",
+		children: "标题2, 限制1行, 溢出隐藏, 显示省略号",
 	},
 };
 

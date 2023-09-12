@@ -1,9 +1,9 @@
+import WBSmall from "./small.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
-import WBWord from "./word.tsx";
 
 const meta = {
-	title: "行内文本/字母",
-	component: WBWord,
+	title: "行内文本/注释",
+	component: WBSmall,
 	tags: ["autodocs"],
 	argTypes: {
 		children: {
@@ -15,12 +15,12 @@ const meta = {
 			},
 		},
 	},
-} satisfies Meta<typeof WBWord>;
+} satisfies Meta<typeof WBSmall>;
 
-type Story = StoryObj<typeof WBWord>;
+type Story = StoryObj<typeof WBSmall>;
 export const Main: Story = {
 	args: {
-		children: "word",
+		children: "边注释, 附属细则(法律文本, 版权信息)等内容",
 	},
 };
 

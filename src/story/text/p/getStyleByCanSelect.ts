@@ -1,4 +1,4 @@
-export default function getStyleWithcanSelect(canSelect: boolean) {
+export default function getStyleByCanSelect(canSelect: boolean) {
 	switch (canSelect) {
 		case true:
 			return "select-auto";

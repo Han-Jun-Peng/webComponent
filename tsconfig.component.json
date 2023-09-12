@@ -1,8 +1,11 @@
 {
 	"include": ["./src/story/**/*.tsx", "./src/story/**/*.ts"],
-	"exclude": ["./node_modules"],
+	"exclude": ["./src/**/*.test.*", "./src/**/*.story.*", "./node_modules"],
 	"compilerOptions": {
-		"noEmit": true,
+		"emitDeclarationOnly": true,
+		"declaration": true,
+		"declarationMap": false,
+		"outDir": "./es/",
 
 		"exactOptionalPropertyTypes": true,
 		"noFallthroughCasesInSwitch": true,

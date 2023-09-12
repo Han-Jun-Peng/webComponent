@@ -1,25 +1,25 @@
-// import { test, expect, describe } from "@jest/globals";
+import { test, expect, describe } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import Word from "./word.tsx";
+import WBWord from "./word.tsx";
 import React from "react";
 
-describe("<Word />", () => {
-	test("<Word />", () => {
-		render(<Word />);
-		const element = screen.getByLabelText("字母");
+describe("<WBWord />", () => {
+	test("<WBWord />", () => {
+		render(<WBWord />);
+		const element = screen.getByRole("paragraph");
 		expect(element).toHaveTextContent("");
 	});
 
-	test("<Word canSelect={false}/>", () => {
-		render(<Word canSelect={false}>word</Word>);
-		const element = screen.getByLabelText("字母");
+	test("<WBWord canSelect={false}/>", () => {
+		render(<WBWord canSelect={false}>word</WBWord>);
+		const element = screen.getByRole("paragraph");
 		expect(element).toHaveClass("select-none");
 	});
 
-	test("<Word />快照", () => {
-		const element = render(<Word />);
+	test("<WBWord />快照", () => {
+		const element = render(<WBWord />);
 		expect(element).toMatchSnapshot();
 	});
 });

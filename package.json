@@ -19,8 +19,8 @@
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build",
 		"test": "jest",
-		"ts": "tsc",
-		"ts-index": "tsc --project tsconfig.index.json"
+		"ts-c": "tsc --project tsconfig.component.json",
+		"ts-i": "tsc --project tsconfig.index.json"
 	},
 	"author": "韩俊鹏",
 	"license": "MIT",

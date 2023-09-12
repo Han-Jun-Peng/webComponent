@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Word /> <Word />快照 1`] = `
+exports[`<WBWord /> <WBWord />快照 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <span
-        aria-label="字母"
-        class="inline font-mono select-auto"
+      <p
+        class="inline font-mono selection:bg-blue-1 select-auto"
+        role="paragraph"
       />
     </div>
   </body>,
   "container": <div>
-    <span
-      aria-label="字母"
-      class="inline font-mono select-auto"
+    <p
+      class="inline font-mono selection:bg-blue-1 select-auto"
+      role="paragraph"
     />
   </div>,
   "debug": [Function],
