@@ -17,7 +17,7 @@ const meta = {
 } satisfies Meta<typeof WBMark>;
 
 type Story = StoryObj<typeof WBMark>;
-export const Main: Story = {
+export const Mark: Story = {
 	args: {
 		children: "背景高亮",
 	},

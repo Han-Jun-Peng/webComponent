@@ -17,7 +17,7 @@ const meta = {
 } satisfies Meta<typeof WBEm>;
 
 type Story = StoryObj<typeof WBEm>;
-export const Main: Story = {
+export const Em: Story = {
 	args: {
 		children: "斜体",
 	},

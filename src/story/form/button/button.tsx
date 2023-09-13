@@ -1,4 +1,5 @@
 import React, { memo } from "react";
+import { WBLoading } from "../../feedback/loading/loading.tsx";
 
 export interface ButtonProp {
 	children?: React.ReactNode;
@@ -34,7 +35,7 @@ export const WBButton = memo(function WBButton({
 		"transition-all", // 启动过渡
 	];
 
-	className.push(getStyle(as, disabled, isDanger));
+	className.push(getStyle(as, disabled, isDanger, isLoadling));
 
 	return (
 		<button
@@ -45,19 +46,26 @@ export const WBButton = memo(function WBButton({
 			disabled={disabled}
 			className={className.join(" ")}
 		>
-			{isLoadling ? null : children}
+			{isLoadling ? (
+				<div className="py-1">
+					<WBLoading></WBLoading>
+				</div>
+			) : (
+				children
+			)}
 		</button>
 	);
 });
 
 function getStyle(
-	as?: "primary" | "secondary" | "dashed" | "text",
-	disabled?: boolean,
-	isDanger?: boolean,
+	as: "primary" | "secondary" | "dashed" | "text",
+	disabled: boolean,
+	isDanger: boolean,
+	isLoadling: boolean,
 ) {
 	switch (as) {
 		case "primary":
-			if (disabled) {
+			if (disabled || isLoadling) {
 				return "border border-black-3 border-solid text-black-4 bg-black-1 dark:border-white-3 dark:text-white-4 dark:bg-white-1 cursor-not-allowed";
 			}
 			if (isDanger) {
@@ -65,7 +73,7 @@ function getStyle(
 			}
 			return "border border-blue-6 border-solid text-white-6 bg-blue-6 hover:border-blue-5 hover:bg-blue-5  active:outline-4 active:outline-blue-1 active:outline active:border-blue-7 active:bg-blue-7 dark:border-blue-5 dark:text-black-6 dark:bg-blue-5 dark:hover:border-blue-6 dark:hover:bg-blue-6 dark:active:outline-blue-10 dark:active:border-blue-4 dark:active:bg-blue-4";
 		case "secondary":
-			if (disabled) {
+			if (disabled || isLoadling) {
 				return "border border-black-3 border-solid text-black-4 bg-black-1 cursor-not-allowed	dark:border-white-3 dark:text-white-4 dark:bg-white-1";
 			}
 			if (isDanger) {
@@ -73,7 +81,7 @@ function getStyle(
 			}
 			return "border border-black-6 border-solid text-black-6 hover:border-blue-5 hover:text-blue-5  active:outline-4 active:outline-blue-1 active:outline active:border-blue-7 active:text-blue-7 dark:border-blue-5 dark:text-blue-5 dark:bg-white-1 dark:hover:border-blue-6 dark:hover:text-blue-6 dark:hover:bg-white-1 dark:active:border-blue-4 dark:active:text-blue-4 dark:active:bg-white-1 dark:active:outline-blue-10";
 		case "dashed":
-			if (disabled) {
+			if (disabled || isLoadling) {
 				return "border border-black-3 border-disable text-black-4 bg-black-1 cursor-not-allowed	dark:border-white-3 dark:text-white-4 dark:bg-white-1";
 			}
 			if (isDanger) {
@@ -81,7 +89,7 @@ function getStyle(
 			}
 			return "border border-black-6 border-dashed text-black-6 hover:border-blue-5 hover:text-blue-5  active:outline-4 active:outline-blue-1 active:outline active:border-blue-7 active:text-blue-7 dark:border-blue-5 dark:text-blue-5 dark:bg-white-1 dark:hover:border-blue-6 dark:hover:text-blue-6 dark:hover:bg-white-1 dark:active:border-blue-4 dark:active:text-blue-4 dark:active:bg-white-1 dark:active:outline-blue-10";
 		case "text":
-			if (disabled) {
+			if (disabled || isLoadling) {
 				return "text-black-4 cursor-not-allowed	dark:text-white-4";
 			}
 			if (isDanger) {

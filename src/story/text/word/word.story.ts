@@ -17,7 +17,7 @@ const meta = {
 } satisfies Meta<typeof WBWord>;
 
 type Story = StoryObj<typeof WBWord>;
-export const Main: Story = {
+export const Word: Story = {
 	args: {
 		children: "word",
 	},

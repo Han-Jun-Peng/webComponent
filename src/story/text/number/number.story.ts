@@ -17,7 +17,7 @@ const meta = {
 } satisfies Meta<typeof WBNumber>;
 
 type Story = StoryObj<typeof WBNumber>;
-export const Main: Story = {
+export const Number: Story = {
 	args: {
 		children: "1,000",
 	},

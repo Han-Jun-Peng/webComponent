@@ -17,7 +17,7 @@ const meta = {
 } satisfies Meta<typeof WBH1>;
 
 type Story = StoryObj<typeof WBH1>;
-export const Main: Story = {
+export const H1: Story = {
 	args: {
 		children: "标题1",
 	},

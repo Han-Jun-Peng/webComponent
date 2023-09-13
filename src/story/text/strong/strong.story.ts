@@ -26,7 +26,7 @@ const meta = {
 } satisfies Meta<typeof WBStrong>;
 
 type Story = StoryObj<typeof WBStrong>;
-export const Main: Story = {
+export const Strong: Story = {
 	args: {
 		children: "加粗",
 		fontWeight: "medium",

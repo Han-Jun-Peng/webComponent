@@ -17,7 +17,7 @@ const meta = {
 } satisfies Meta<typeof WBSmall>;
 
 type Story = StoryObj<typeof WBSmall>;
-export const Main: Story = {
+export const Small: Story = {
 	args: {
 		children: "边注释, 附属细则(法律文本, 版权信息)等内容",
 	},

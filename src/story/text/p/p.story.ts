@@ -33,7 +33,7 @@ const meta = {
 } satisfies Meta<typeof WBP>;
 
 type Story = StoryObj<typeof WBP>;
-export const Main: Story = {
+export const P: Story = {
 	args: {
 		children: "这是一段文字",
 		canSelect: true,
