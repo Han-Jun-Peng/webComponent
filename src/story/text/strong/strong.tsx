@@ -1,15 +1,20 @@
 import React, { memo } from "react";
 
-interface StrongProp {
+export interface StrongProp {
 	children?: React.ReactNode;
 	fontWeight?: "medium" | "semibold";
 }
 
-const WBStrong = memo(function WBStrong({
+export const WBStrong = memo(function WBStrong({
 	children,
 	fontWeight = "medium",
 }: StrongProp) {
-	const className: string[] = ["inline", "selection:bg-blue-1"];
+	const className: string[] = [
+		"inline",
+		"text-black-6 dark:text-white-6",
+		"selection:bg-blue-1",
+		"dark:selection:bg-blue-10",
+	];
 
 	switch (fontWeight) {
 		case "medium":
@@ -26,5 +31,3 @@ const WBStrong = memo(function WBStrong({
 
 	return <strong className={className.join(" ")}>{children}</strong>;
 });
-
-export default WBStrong;

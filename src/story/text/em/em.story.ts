@@ -1,4 +1,4 @@
-import WBEm from "./em.tsx";
+import { WBEm } from "./em.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
@@ -7,7 +7,6 @@ const meta = {
 	tags: ["autodocs"],
 	argTypes: {
 		children: {
-			control: "text",
 			table: {
 				type: {
 					summary: "ReactNode",
@@ -20,7 +19,7 @@ const meta = {
 type Story = StoryObj<typeof WBEm>;
 export const Main: Story = {
 	args: {
-		children: "语义上需要强调的文本, 样式是斜体",
+		children: "斜体",
 	},
 };
 

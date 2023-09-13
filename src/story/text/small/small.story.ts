@@ -1,4 +1,4 @@
-import WBSmall from "./small.tsx";
+import { WBSmall } from "./small.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
@@ -7,7 +7,6 @@ const meta = {
 	tags: ["autodocs"],
 	argTypes: {
 		children: {
-			control: "text",
 			table: {
 				type: {
 					summary: "ReactNode",

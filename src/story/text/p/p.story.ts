@@ -1,4 +1,4 @@
-import WBP from "./p.tsx";
+import { WBP } from "./p.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
@@ -7,7 +7,6 @@ const meta = {
 	tags: ["autodocs"],
 	argTypes: {
 		children: {
-			control: "text",
 			table: {
 				type: {
 					summary: "ReactNode",
@@ -15,26 +14,18 @@ const meta = {
 			},
 		},
 		canSelect: {
-			control: "boolean",
 			description: "用户是否可选中文本",
 			table: {
 				defaultValue: {
 					summary: true,
 				},
-				type: {
-					summary: "boolean",
-				},
 			},
 		},
 		isRetraction: {
-			control: "boolean",
 			description: "是否缩进文本",
 			table: {
 				defaultValue: {
 					summary: false,
-				},
-				type: {
-					summary: "boolean",
 				},
 			},
 		},
@@ -44,7 +35,7 @@ const meta = {
 type Story = StoryObj<typeof WBP>;
 export const Main: Story = {
 	args: {
-		children: "这是一段文字, 表示普通的文本",
+		children: "这是一段文字",
 		canSelect: true,
 		isRetraction: false,
 	},

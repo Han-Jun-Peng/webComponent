@@ -1,4 +1,4 @@
-import WBH2 from "./h2.tsx";
+import { WBH2 } from "./h2.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
@@ -7,7 +7,6 @@ const meta = {
 	tags: ["autodocs"],
 	argTypes: {
 		children: {
-			control: "text",
 			table: {
 				type: {
 					summary: "ReactNode",
@@ -20,7 +19,7 @@ const meta = {
 type Story = StoryObj<typeof WBH2>;
 export const Main: Story = {
 	args: {
-		children: "标题2, 限制1行, 溢出隐藏, 显示省略号",
+		children: "标题2",
 	},
 };
 

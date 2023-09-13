@@ -6,7 +6,7 @@ const config: StorybookConfig = {
 		"@storybook/addon-links",
 		"@storybook/addon-essentials",
 		"@storybook/addon-onboarding",
-		"@storybook/addon-interactions",
+		"@storybook/addon-interactions", //交互测试插件
 		{
 			name: "@storybook/addon-styling",
 			options: {

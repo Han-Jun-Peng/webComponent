@@ -1,13 +1,13 @@
 import React, { ReactNode, memo } from "react";
 
-interface SmallProp {
+export interface SmallProp {
 	children?: ReactNode;
 }
 
-const WBSmall = memo(function WBSmall({ children }: SmallProp) {
+export const WBSmall = memo(function WBSmall({ children }: SmallProp) {
 	return (
-		<small className="inline text-sm selection:bg-blue-1">{children}</small>
+		<small className="inline text-sm text-black-5 dark:text-white-5 selection:bg-blue-1 dark:selection:bg-blue-10">
+			{children}
+		</small>
 	);
 });
-
-export default WBSmall;

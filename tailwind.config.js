@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ["./src/**/*.{html,ts,tsx}"],
-	darkMode: ["class", '[data-mode="dark"]'],
+	darkMode: ["media", "[mode='dark']"],
 	theme: {
 		screens: {
 			sm: "320px",
@@ -34,13 +34,13 @@ export default {
 				1: "#e6f7ff", // 选中
 				2: "#bae7ff",
 				3: "#91d5ff",
-				4: "#69c0ff",
-				5: "#40a9ff", // 悬浮
-				6: "#1890ff", // 常规
+				4: "#69c0ff", //             深色激活
+				5: "#40a9ff", // 悬浮        深色常规
+				6: "#1890ff", // 常规        深色悬浮
 				7: "#096dd9", // 点击
 				8: "#0050b3",
 				9: "#003a8c",
-				10: "#002766",
+				10: "#002766", //            深色选中
 			},
 			green: {
 				1: "#f6ffed", // 选中
