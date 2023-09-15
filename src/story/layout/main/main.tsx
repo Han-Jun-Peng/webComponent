@@ -12,7 +12,6 @@ export const WBMain = memo(function WBMain({
 	const className = [
 		"block",
 		"h-full",
-
 		"rounded",
 		"px-4 py-2",
 		"bg-black-1 dark:bg-white-1",
