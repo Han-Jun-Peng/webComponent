@@ -15,10 +15,11 @@ const meta = {
 			},
 		},
 		height: {
-			description: "配置高度: 不限定高度, 或与屏幕同高, 或限定高度溢出滚动",
+			description:
+				"配置页面高度: 1. 输入高度(数字)(像素), 2. 不限定高度, 3. 与屏幕同高",
 			table: {
 				defaultValue: {
-					summary: "boundless",
+					summary: "screen",
 				},
 			},
 		},
@@ -35,14 +36,14 @@ const meta = {
 
 const children1 = (
 	<>
-		<div className="bg-blue-1 h-12 w-full">页眉</div>
-		<div className="bg-blue-2 flex-1 w-full">内容</div>
-		<div className="bg-blue-3 h-12 w-full">页脚</div>
+		<div className="bg-blue-1 h-12 w-full">header</div>
+		<div className="bg-blue-2 flex-1 w-full">content</div>
+		<div className="bg-blue-3 h-12 w-full">footer</div>
 	</>
 );
 
 type Story = StoryObj<typeof WBPage>;
-export const Page1: Story = {
+export const TopToBottom: Story = {
 	args: {
 		children: children1,
 		height: "screen",
@@ -52,12 +53,12 @@ export const Page1: Story = {
 
 const children2 = (
 	<>
-		<div className="bg-blue-1 h-full w-52">侧边栏</div>
-		<div className="bg-blue-2 h-full flex-1">内容</div>
+		<div className="bg-blue-1 h-full w-52">aside</div>
+		<div className="bg-blue-2 h-full flex-1">content</div>
 	</>
 );
 
-export const Page2: Story = {
+export const LiftToRight: Story = {
 	args: {
 		children: children2,
 		height: "screen",
