@@ -18,7 +18,7 @@ export const WBPage = memo(function WBPage({
 
 	switch (height) {
 		case "boundless":
-			className.push("");
+			className.push("overflow-x-hidden");
 			break;
 		case "screen":
 			className.push("h-screen overflow-hidden");
@@ -26,21 +26,21 @@ export const WBPage = memo(function WBPage({
 		default:
 			if (typeof height == "number") {
 				style.height = height + "px";
-				className.push("overflow-y-auto");
+				className.push("overflow-x-hidden overflow-y-auto");
 				break;
 			} else {
 				throw new Event(`不能将${typeof height}类型, 赋值给类型的height`);
 			}
 	}
 
-	if (direction !== "horizontal") {
-		if (direction !== "vertical") {
+	switch (direction) {
+		case "horizontal":
+			gap = "zero";
+			break;
+		case "vertical":
+			break;
+		default:
 			throw new Event(`不能将${typeof direction}类型, 赋值给类型的direction`);
-		}
-	}
-
-	if (direction == "horizontal") {
-		gap = "zero";
 	}
 
 	return (
