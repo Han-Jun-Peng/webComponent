@@ -3,12 +3,12 @@ import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 
 const meta = {
-	title: "布局/弹性布局",
+	title: "布局/Flex容器",
 	component: WBFlex,
 	tags: ["autodocs"],
 	argTypes: {
 		children: {
-			description: "属性的描述",
+			description: "flex容器的子元素",
 			table: {
 				type: {
 					summary: "ReactNode",
@@ -27,7 +27,7 @@ const meta = {
 			description: "子元素溢出时, 是否可换行",
 			table: {
 				defaultValue: {
-					summary: true,
+					summary: false,
 				},
 			},
 		},
@@ -69,7 +69,7 @@ export const Flex: Story = {
 			</>
 		),
 		direction: "horizontal",
-		wrap: true,
+		wrap: false,
 		gap: "medium",
 		alignX: "start",
 		alignY: "start",

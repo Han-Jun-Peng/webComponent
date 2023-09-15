@@ -12,7 +12,7 @@ interface FlexProp {
 export const WBFlex = memo(function WBFlex({
 	children,
 	direction = "horizontal",
-	wrap = true,
+	wrap = false,
 	gap = "medium",
 	alignX = "start",
 	alignY = "start",

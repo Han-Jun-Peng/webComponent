@@ -8,13 +8,13 @@ export default {
 			md: "480px",
 			lg: "768px",
 			xl: "1024px",
-			"2xl": "1280px",
+			xxl: "1280px",
 		},
 		colors: {
 			transparent: "transparent",
 			current: "currentColor",
 			black: {
-				1: "#F5F5F5FF", // 背景色
+				1: "#F5F5F5FF", // 背景色(页面)
 				2: "#0505050F", // 分割线
 				3: "#D9D9D9FF", // 边框
 				4: "#00000040", // 禁用文本

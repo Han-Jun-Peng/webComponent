@@ -2,7 +2,7 @@ import { WBHr } from "./hr.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-	title: "布局/分隔线",
+	title: "布局/Hr",
 	component: WBHr,
 	tags: ["autodocs"],
 	argTypes: {
