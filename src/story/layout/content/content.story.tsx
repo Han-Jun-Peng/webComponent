@@ -1,9 +1,6 @@
 import { WBContent } from "./content.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
-import { WBAside } from "../aside/aside.tsx";
-import { WBMain } from "../main/main.tsx";
-import { WBP } from "../../text/p/p.tsx";
 
 const meta = {
 	title: "布局/Content",
@@ -17,7 +14,6 @@ const meta = {
 				},
 			},
 		},
-
 		direction: {
 			description: "配置子元素的排列方向: 水平或垂直",
 			table: {
@@ -27,7 +23,7 @@ const meta = {
 			},
 		},
 		padding: {
-			description: "是否启用内边距",
+			description: "是否启用元素的内边距样式",
 			table: {
 				defaultValue: {
 					summary: false,
@@ -44,32 +40,53 @@ const meta = {
 		},
 	},
 } satisfies Meta<typeof WBContent>;
+export default meta;
 
-const children = (
+type Story = StoryObj<typeof WBContent>;
+
+const children1 = (
+	<main className="bg-blue-2">在main左右两侧, 是被占据的剩余空间</main>
+);
+export const Content1: Story = {
+	args: {
+		children: children1,
+		direction: "horizontal",
+		padding: false,
+		hasAside: false,
+	},
+};
+
+const children2 = (
 	<>
-		<WBAside>aside</WBAside>
+		<aside className="bg-blue-1">aside</aside>
 		<WBContent direction="horizontal">
-			<WBMain>
-				<div className="w-50 sm:w-[100px] md:w-[400px] lg:w-[700px] xl:w-[850px] xxl:w-[980px] overflow-y-auto h-full bg-blue-1">
-					<WBP>
-						content-main-div, 这是一个为了实现响应式的嵌套结构, 1.
-						content负责自动伸缩, 2. 为了更灵活的断点, 所以main只设置了样式, 3.
-						组件库的使用者需要手动编写div, 并设置断点宽度
-					</WBP>
-				</div>
-			</WBMain>
+			<main className="bg-blue-2">在main左右两侧, 是被占据的剩余空间</main>
 		</WBContent>
 	</>
 );
-
-type Story = StoryObj<typeof WBContent>;
-export const Content: Story = {
+export const Content2: Story = {
 	args: {
-		children: children,
+		children: children2,
 		direction: "horizontal",
 		padding: false,
 		hasAside: true,
 	},
 };
 
-export default meta;
+const children3 = (
+	<>
+		<header className="bg-blue-1 w-full">header</header>
+		<WBContent direction="horizontal">
+			<main className="bg-blue-2">在main左右两侧, 是被占据的剩余空间</main>
+		</WBContent>
+		<footer className="bg-blue-3 w-full">footer</footer>
+	</>
+);
+export const Content3: Story = {
+	args: {
+		children: children3,
+		direction: "vertical",
+		padding: false,
+		hasAside: false,
+	},
+};
