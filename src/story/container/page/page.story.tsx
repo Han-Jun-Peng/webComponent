@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 
 const meta = {
-	title: "容器/Page",
+	title: "容器/网页结构/Page",
 	component: WBPage,
 	tags: ["autodocs"],
 	argTypes: {

@@ -2,7 +2,7 @@ import { WBLoading } from "./loading.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-	title: "操作反馈/加载中",
+	title: "反馈/Loading",
 	component: WBLoading,
 	tags: ["autodocs"],
 	argTypes: {

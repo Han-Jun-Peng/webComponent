@@ -1,9 +1,9 @@
-import { WBNumber } from "./number.tsx";
+import { WBH3 } from "./h3.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-	title: "行内文本/数字",
-	component: WBNumber,
+	title: "内容/块文本/H3",
+	component: WBH3,
 	tags: ["autodocs"],
 	argTypes: {
 		children: {
@@ -14,12 +14,12 @@ const meta = {
 			},
 		},
 	},
-} satisfies Meta<typeof WBNumber>;
+} satisfies Meta<typeof WBH3>;
 
-type Story = StoryObj<typeof WBNumber>;
-export const Number: Story = {
+type Story = StoryObj<typeof WBH3>;
+export const H3: Story = {
 	args: {
-		children: "1,000",
+		children: "标题3",
 	},
 };
 

@@ -4,7 +4,7 @@ import React from "react";
 import { WBHr } from "../../layout/hr/hr.tsx";
 
 const meta = {
-	title: "容器/Ul",
+	title: "容器/列表/Ul",
 	component: WBUl,
 	tags: ["autodocs"],
 	argTypes: {

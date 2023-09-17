@@ -2,7 +2,7 @@ import { WBSmall } from "./small.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-	title: "行内文本/注释",
+	title: "内容/行内文本/Small",
 	component: WBSmall,
 	tags: ["autodocs"],
 	argTypes: {

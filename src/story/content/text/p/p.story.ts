@@ -2,7 +2,7 @@ import { WBP } from "./p.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-	title: "块文本/P",
+	title: "内容/块文本/P",
 	component: WBP,
 	tags: ["autodocs"],
 	argTypes: {

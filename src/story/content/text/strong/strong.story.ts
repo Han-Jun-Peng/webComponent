@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { WBStrong } from "./strong.tsx";
 
 const meta = {
-	title: "行内文本/加粗",
+	title: "内容/行内文本/Strong",
 	component: WBStrong,
 	tags: ["autodocs"],
 	argTypes: {
@@ -28,7 +28,7 @@ const meta = {
 type Story = StoryObj<typeof WBStrong>;
 export const Strong: Story = {
 	args: {
-		children: "加粗",
+		children: "加粗强调",
 		fontWeight: "medium",
 	},
 };

@@ -2,7 +2,7 @@ import { WBLi } from "./li.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-	title: "容器/Li",
+	title: "容器/列表/Li",
 	component: WBLi,
 	tags: ["autodocs"],
 	argTypes: {

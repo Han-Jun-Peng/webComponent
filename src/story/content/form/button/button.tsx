@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { WBLoading } from "../../feedback/loading/loading.tsx";
+import { WBLoading } from "../../../feedback/loading/loading.tsx";
 
 export interface ButtonProp {
 	children?: React.ReactNode;

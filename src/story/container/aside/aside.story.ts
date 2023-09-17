@@ -2,7 +2,7 @@ import { WBAside } from "./aside.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-	title: "容器/Aside",
+	title: "容器/网页结构/Aside",
 	component: WBAside,
 	tags: ["autodocs"],
 	argTypes: {

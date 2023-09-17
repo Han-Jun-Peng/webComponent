@@ -1,9 +1,9 @@
-import { WBH2 } from "./h2.tsx";
+import { WBMark } from "./mark.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-	title: "块文本/H2",
-	component: WBH2,
+	title: "内容/行内文本/Mark",
+	component: WBMark,
 	tags: ["autodocs"],
 	argTypes: {
 		children: {
@@ -14,12 +14,12 @@ const meta = {
 			},
 		},
 	},
-} satisfies Meta<typeof WBH2>;
+} satisfies Meta<typeof WBMark>;
 
-type Story = StoryObj<typeof WBH2>;
-export const H2: Story = {
+type Story = StoryObj<typeof WBMark>;
+export const Mark: Story = {
 	args: {
-		children: "标题2",
+		children: "标记, 背景高亮",
 	},
 };
 

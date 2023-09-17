@@ -2,7 +2,7 @@ import { WBFooter } from "./footer.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-	title: "容器/Footer",
+	title: "容器/网页结构/Footer",
 	component: WBFooter,
 	tags: ["autodocs"],
 	argTypes: {

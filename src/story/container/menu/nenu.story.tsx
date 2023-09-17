@@ -4,7 +4,7 @@ import React from "react";
 import { WBHr } from "../../layout/hr/hr.tsx";
 
 const meta = {
-	title: "容器/Menu",
+	title: "容器/列表/Menu",
 	component: WBMenu,
 	tags: ["autodocs"],
 	argTypes: {

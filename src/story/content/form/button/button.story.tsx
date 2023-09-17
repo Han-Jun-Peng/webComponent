@@ -2,7 +2,7 @@ import { WBButton } from "./button.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-	title: "表单/按钮",
+	title: "内容/表单/Button",
 	component: WBButton,
 	tags: ["autodocs"],
 	argTypes: {

@@ -1,9 +1,9 @@
-import { WBH1 } from "./h1.tsx";
+import { WBH2 } from "./h2.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-	title: "块文本/H1",
-	component: WBH1,
+	title: "内容/块文本/H2",
+	component: WBH2,
 	tags: ["autodocs"],
 	argTypes: {
 		children: {
@@ -14,12 +14,12 @@ const meta = {
 			},
 		},
 	},
-} satisfies Meta<typeof WBH1>;
+} satisfies Meta<typeof WBH2>;
 
-type Story = StoryObj<typeof WBH1>;
-export const H1: Story = {
+type Story = StoryObj<typeof WBH2>;
+export const H2: Story = {
 	args: {
-		children: "标题1",
+		children: "标题2",
 	},
 };
 

@@ -1,9 +1,9 @@
-import { WBEm } from "./em.tsx";
+import { WBNumber } from "./number.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-	title: "行内文本/斜体",
-	component: WBEm,
+	title: "内容/行内文本/Number",
+	component: WBNumber,
 	tags: ["autodocs"],
 	argTypes: {
 		children: {
@@ -14,12 +14,12 @@ const meta = {
 			},
 		},
 	},
-} satisfies Meta<typeof WBEm>;
+} satisfies Meta<typeof WBNumber>;
 
-type Story = StoryObj<typeof WBEm>;
-export const Em: Story = {
+type Story = StoryObj<typeof WBNumber>;
+export const Number: Story = {
 	args: {
-		children: "斜体",
+		children: "1,000",
 	},
 };
 
