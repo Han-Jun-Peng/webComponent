@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 
 const meta = {
-	title: "布局/Main",
+	title: "容器/Main",
 	component: WBMain,
 	tags: ["autodocs"],
 	argTypes: {
@@ -14,10 +14,18 @@ const meta = {
 				},
 			},
 		},
+		id: {
+			description: "配置元素的id, 用于实现页面内的锚点导航'#id'",
+			table: {
+				defaultValue: {
+					summary: "main",
+				},
+			},
+		},
 		border: {
 			description: "是否显示边框",
 			table: {
-				type: {
+				defaultValue: {
 					summary: false,
 				},
 			},
@@ -36,6 +44,7 @@ type Story = StoryObj<typeof WBMain>;
 export const Main: Story = {
 	args: {
 		children: children,
+		id: "main",
 		border: false,
 	},
 };

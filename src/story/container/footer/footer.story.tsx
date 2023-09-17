@@ -1,9 +1,9 @@
-import { WBAside } from "./aside.tsx";
+import { WBFooter } from "./footer.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-	title: "布局/Aside",
-	component: WBAside,
+	title: "容器/Footer",
+	component: WBFooter,
 	tags: ["autodocs"],
 	argTypes: {
 		children: {
@@ -16,18 +16,18 @@ const meta = {
 		border: {
 			description: "是否显示边框",
 			table: {
-				type: {
+				defaultValue: {
 					summary: false,
 				},
 			},
 		},
 	},
-} satisfies Meta<typeof WBAside>;
+} satisfies Meta<typeof WBFooter>;
 
-type Story = StoryObj<typeof WBAside>;
-export const Aside: Story = {
+type Story = StoryObj<typeof WBFooter>;
+export const Footer: Story = {
 	args: {
-		children: "侧边栏",
+		children: "页脚",
 		border: false,
 	},
 };

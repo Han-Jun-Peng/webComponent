@@ -2,11 +2,13 @@ import React, { ReactNode, memo } from "react";
 
 interface MainProp {
 	children?: ReactNode;
+	id?: string;
 	border?: boolean;
 }
 
 export const WBMain = memo(function WBMain({
 	children,
+	id = "main",
 	border = false,
 }: MainProp) {
 	const className = [
@@ -29,7 +31,7 @@ export const WBMain = memo(function WBMain({
 	}
 
 	return (
-		<main autoFocus className={className.join(" ")}>
+		<main id={id} autoFocus className={className.join(" ")}>
 			{children}
 		</main>
 	);

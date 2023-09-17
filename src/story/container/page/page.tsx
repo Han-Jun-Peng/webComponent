@@ -1,5 +1,5 @@
 import React, { ReactNode, memo } from "react";
-import { WBFlex } from "../flex/flex.tsx";
+import { WBFlex } from "../../layout/flex/flex.tsx";
 
 export interface PageProp {
 	children: ReactNode;

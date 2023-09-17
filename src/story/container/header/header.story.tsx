@@ -1,9 +1,9 @@
-import { WBFooter } from "./footer.tsx";
+import { WBHeader } from "./header.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-	title: "布局/Footer",
-	component: WBFooter,
+	title: "容器/Header",
+	component: WBHeader,
 	tags: ["autodocs"],
 	argTypes: {
 		children: {
@@ -16,18 +16,18 @@ const meta = {
 		border: {
 			description: "是否显示边框",
 			table: {
-				type: {
+				defaultValue: {
 					summary: false,
 				},
 			},
 		},
 	},
-} satisfies Meta<typeof WBFooter>;
+} satisfies Meta<typeof WBHeader>;
 
-type Story = StoryObj<typeof WBFooter>;
-export const Footer: Story = {
+type Story = StoryObj<typeof WBHeader>;
+export const Header: Story = {
 	args: {
-		children: "页脚",
+		children: "页眉",
 		border: false,
 	},
 };

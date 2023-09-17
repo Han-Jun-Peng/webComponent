@@ -1,9 +1,9 @@
-import { WBHeader } from "./header.tsx";
+import { WBAside } from "./aside.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-	title: "布局/Header",
-	component: WBHeader,
+	title: "容器/Aside",
+	component: WBAside,
 	tags: ["autodocs"],
 	argTypes: {
 		children: {
@@ -16,18 +16,18 @@ const meta = {
 		border: {
 			description: "是否显示边框",
 			table: {
-				type: {
+				defaultValue: {
 					summary: false,
 				},
 			},
 		},
 	},
-} satisfies Meta<typeof WBHeader>;
+} satisfies Meta<typeof WBAside>;
 
-type Story = StoryObj<typeof WBHeader>;
-export const Header: Story = {
+type Story = StoryObj<typeof WBAside>;
+export const Aside: Story = {
 	args: {
-		children: "页眉",
+		children: "侧边栏",
 		border: false,
 	},
 };
