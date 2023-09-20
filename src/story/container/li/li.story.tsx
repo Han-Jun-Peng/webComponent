@@ -22,23 +22,23 @@ const meta = {
 		border: {
 			description: "是否启用边框样式",
 			table: {
-				type: {
+				defaultValue: {
 					summary: false,
 				},
 			},
 		},
 		noBackground: {
-			description: "是否启用背景:hover和:active样式",
+			description: "是否不启用背景:hover和:active样式",
 			table: {
-				type: {
+				defaultValue: {
 					summary: false,
 				},
 			},
 		},
 		isActive: {
-			description: "是否被用户激活或选中",
+			description: "是否已经被用户激活或选中",
 			table: {
-				type: {
+				defaultValue: {
 					summary: false,
 				},
 			},
