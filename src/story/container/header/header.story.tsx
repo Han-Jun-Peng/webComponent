@@ -21,14 +21,23 @@ const meta = {
 				},
 			},
 		},
+		shadow: {
+			description: "是否显示投影",
+			table: {
+				defaultValue: {
+					summary: false,
+				},
+			},
+		},
 	},
 } satisfies Meta<typeof WBHeader>;
 
 type Story = StoryObj<typeof WBHeader>;
 export const Header: Story = {
 	args: {
-		children: "页眉",
+		children: "网页或独立区域的顶部",
 		border: false,
+		shadow: false,
 	},
 };
 

@@ -21,6 +21,14 @@ const meta = {
 				},
 			},
 		},
+		shadow: {
+			description: "是否显示投影",
+			table: {
+				defaultValue: {
+					summary: false,
+				},
+			},
+		},
 	},
 } satisfies Meta<typeof WBAside>;
 
@@ -29,6 +37,7 @@ export const Aside: Story = {
 	args: {
 		children: "侧边栏",
 		border: false,
+		shadow: false,
 	},
 };
 

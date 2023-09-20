@@ -21,14 +21,23 @@ const meta = {
 				},
 			},
 		},
+		shadow: {
+			description: "是否显示投影",
+			table: {
+				defaultValue: {
+					summary: false,
+				},
+			},
+		},
 	},
 } satisfies Meta<typeof WBFooter>;
 
 type Story = StoryObj<typeof WBFooter>;
 export const Footer: Story = {
 	args: {
-		children: "页脚",
+		children: "网页或独立区域的底部",
 		border: false,
+		shadow: false,
 	},
 };
 

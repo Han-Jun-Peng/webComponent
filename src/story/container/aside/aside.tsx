@@ -4,11 +4,13 @@ import { WBFlex } from "../../layout/flex/flex.tsx";
 interface AsideProp {
 	children?: ReactNode;
 	border?: boolean;
+	shadow?: boolean;
 }
 
 export const WBAside = memo(function WBAside({
 	children,
 	border = false,
+	shadow = false,
 }: AsideProp) {
 	const className = [
 		"inline-block",
@@ -16,17 +18,20 @@ export const WBAside = memo(function WBAside({
 		"rounded",
 		"px-4 py-2",
 		"bg-black-1 dark:bg-white-1",
-		"shadow dark:shadow-white-2",
 	];
 
-	switch (border) {
-		case true:
-			className.push("border border-black-3 dark:border-white-3");
-			break;
-		case false:
-			break;
-		default:
+	if (border) {
+		if (typeof border !== "boolean") {
 			throw new Event(`不能将${typeof border}类型, 赋值给boolean类型的border`);
+		}
+		className.push("border border-black-3 dark:border-white-3");
+	}
+
+	if (shadow) {
+		if (typeof shadow !== "boolean") {
+			throw new Event(`不能将${typeof shadow}类型, 赋值给boolean类型的shadow`);
+		}
+		className.push("shadow dark:shadow-white-2");
 	}
 
 	return (
