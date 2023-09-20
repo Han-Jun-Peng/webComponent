@@ -15,9 +15,9 @@ export const WBDetails = memo(function WBDetails({
 	return (
 		<details
 			open={open}
-			className="border rounded border-black-3 dark:border-white-3 pointer"
+			className="border rounded border-black-3 dark:border-white-3"
 		>
-			<summary className="px-4 py-2 font-sans font-normal text-base text-black-6 dark:text-white-6 selection:bg-blue-1 dark:selection:bg-blue-10 truncate">
+			<summary className="px-4 py-2 font-sans font-normal text-base text-black-6 dark:text-white-6 selection:bg-blue-1 dark:selection:bg-blue-10 truncate cursor-pointer">
 				{summary}
 			</summary>
 			<div>
