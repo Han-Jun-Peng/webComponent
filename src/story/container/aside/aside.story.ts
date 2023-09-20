@@ -21,6 +21,14 @@ const meta = {
 				},
 			},
 		},
+		padding: {
+			description: "是否启用内边距",
+			table: {
+				defaultValue: {
+					summary: false,
+				},
+			},
+		},
 		shadow: {
 			description: "是否显示投影",
 			table: {
@@ -37,6 +45,7 @@ export const Aside: Story = {
 	args: {
 		children: "侧边栏",
 		border: false,
+		padding: false,
 		shadow: false,
 	},
 };
