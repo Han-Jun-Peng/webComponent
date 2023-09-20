@@ -29,6 +29,25 @@ const meta = {
 				},
 			},
 		},
+		contentEditable: {
+			description: "内容是否可编辑",
+			table: {
+				defaultValue: {
+					summary: false,
+				},
+			},
+		},
+		setChildren: {
+			description: "配置设置children的setChildren函数",
+		},
+		align: {
+			description: "配置内容的水平对齐位置",
+			table: {
+				defaultValue: {
+					summary: "start",
+				},
+			},
+		},
 	},
 } satisfies Meta<typeof WBP>;
 
@@ -38,6 +57,8 @@ export const P: Story = {
 		children: "这是一段文字",
 		canSelect: true,
 		isRetraction: false,
+		contentEditable: false,
+		align: "start",
 	},
 };
 

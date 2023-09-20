@@ -14,8 +14,8 @@ export default {
 			transparent: "transparent",
 			current: "currentColor",
 			black: {
-				1: "#F5F5F5FF", // 背景色(页面)
-				2: "#0505050F", // 分割线
+				1: "#F5F5F5FF", // 背景色
+				2: "#0505050F", // 背景色,分割线
 				3: "#D9D9D9FF", // 边框
 				4: "#00000040", // 禁用文本
 				5: "#000000A6", // 装饰性文本
