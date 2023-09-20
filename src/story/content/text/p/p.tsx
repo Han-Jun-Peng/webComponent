@@ -7,6 +7,7 @@ export interface PProp {
 	contentEditable?: boolean;
 	setChildren?: (children: ReactNode) => void;
 	align?: "start" | "center" | "end";
+	noWarp?: boolean;
 }
 
 export const WBP = memo(function WBP({
@@ -16,6 +17,7 @@ export const WBP = memo(function WBP({
 	contentEditable = false,
 	setChildren,
 	align = "start",
+	noWarp = false,
 }: PProp) {
 	const className = [
 		"block",
@@ -24,8 +26,6 @@ export const WBP = memo(function WBP({
 		"text-base", // 16号
 		"text-black-6", // 字体颜色
 		"dark:text-white-6", // 深色模式, 字体颜色
-		"overflow-y-hidden",
-		"text-clip",
 		"break-all", // 单词溢出时, 截断放下一行, 再溢出, 重复
 		"hyphens-auto", // 单词溢出时, 换行时,添加连字符
 		"selection:bg-blue-1", // 用户选中时, 背景高亮
@@ -68,6 +68,17 @@ export const WBP = memo(function WBP({
 			throw new Event(
 				`不能将${typeof align}类型, 赋值给"start" | "center" | "end"类型的align`,
 			);
+	}
+
+	switch (noWarp) {
+		case true:
+			className.push("truncate");
+			break;
+		case false:
+			className.push("overflow-y-hidden text-clip");
+			break;
+		default:
+			throw new Event(`不能将${typeof noWarp}类型, 赋值给boolean类型的noWarp`);
 	}
 
 	const [value, setValue] = useState(children);

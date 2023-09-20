@@ -48,6 +48,14 @@ const meta = {
 				},
 			},
 		},
+		noWarp: {
+			description: "是否不换行",
+			table: {
+				defaultValue: {
+					summary: false,
+				},
+			},
+		},
 	},
 } satisfies Meta<typeof WBP>;
 
@@ -59,6 +67,7 @@ export const P: Story = {
 		isRetraction: false,
 		contentEditable: false,
 		align: "start",
+		noWarp: false,
 	},
 };
 
