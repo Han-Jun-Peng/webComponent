@@ -21,6 +21,14 @@ const meta = {
 				},
 			},
 		},
+		padding: {
+			description: "是否启用内边距",
+			table: {
+				defaultValue: {
+					summary: false,
+				},
+			},
+		},
 		shadow: {
 			description: "是否显示投影",
 			table: {
@@ -37,6 +45,7 @@ export const Header: Story = {
 	args: {
 		children: "网页或独立区域的顶部",
 		border: false,
+		padding: false,
 		shadow: false,
 	},
 };
