@@ -1,7 +1,7 @@
 {
 	"name": "@hanjunpeng/web-component",
 	"version": "1.0.0",
-	"description": "基于React,Tailwind Css,实现的仅适用于网页的组件",
+	"description": "基于React,Tailwind Css,React Router实现的仅适用于网页的组件",
 	"keywords": [
 		"React",
 		"TypeScript",
@@ -73,7 +73,8 @@
 	"dependencies": {
 		"@babel/runtime-corejs3": "^7.22.11",
 		"react": ">=18.2.0",
-		"react-dom": ">=18.2.0"
+		"react-dom": ">=18.2.0",
+		"react-router-dom": "^6.16.0"
 	},
 	"files": [
 		"./es/",
