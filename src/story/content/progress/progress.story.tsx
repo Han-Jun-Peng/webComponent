@@ -10,7 +10,7 @@ const meta = {
 			description: "配置进度条的宽度(像素)",
 			table: {
 				defaultValue: {
-					summary: 100,
+					summary: 320,
 				},
 			},
 		},
@@ -47,7 +47,7 @@ const meta = {
 type Story = StoryObj<typeof WBProgress>;
 export const Progress: Story = {
 	args: {
-		width: 100,
+		width: 320,
 		height: 8,
 		max: 100,
 		value: 50,

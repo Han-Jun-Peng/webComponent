@@ -14,7 +14,7 @@ interface ProgressProp {
 	onKeyUpCapture?: (keyboardEvent?: React.KeyboardEvent) => void;
 }
 export const WBProgress = memo(function WBProgress({
-	width = 100,
+	width = 320,
 	height = 8,
 	max = 100,
 	value = 50,
