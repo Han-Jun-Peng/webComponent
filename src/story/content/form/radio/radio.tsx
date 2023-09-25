@@ -61,6 +61,14 @@ export const WBRadio = memo(function WBRadio({
 		}
 	}
 
+	if (onChange) {
+		if (typeof onChange !== "function") {
+			throw new Event(
+				`不能将${typeof onChange}类型, 赋值给boolean类型的onChange`,
+			);
+		}
+	}
+
 	const handlerKeyDown = useCallback((keyboardEvent: React.KeyboardEvent) => {
 		keyboardEvent.stopPropagation();
 		if (keyboardEvent.key == "Enter") {
@@ -70,7 +78,7 @@ export const WBRadio = memo(function WBRadio({
 	}, []);
 
 	return (
-		<label>
+		<label className="inline-block">
 			<WBFlex direction="horizontal" alignY="center" gap="small">
 				<input
 					type="radio"
