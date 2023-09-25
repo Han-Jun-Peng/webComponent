@@ -47,6 +47,9 @@ const meta = {
 				},
 			},
 		},
+		onChange: {
+			description: "配置onChange事件处理函数",
+		},
 	},
 } satisfies Meta<typeof WBRadio>;
 
