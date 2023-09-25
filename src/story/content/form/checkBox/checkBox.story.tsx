@@ -7,7 +7,7 @@ const meta = {
 	tags: ["autodocs"],
 	argTypes: {
 		children: {
-			description: "配置复选的文字描述",
+			description: "配置label元素的文字描述",
 			table: {
 				defaultValue: {
 					summary: "复选",
@@ -47,6 +47,9 @@ const meta = {
 				},
 			},
 		},
+		onChange: {
+			description: "配置onChange事件处理函数",
+		},
 	},
 } satisfies Meta<typeof WBCheckBox>;
 
@@ -54,8 +57,8 @@ type Story = StoryObj<typeof WBCheckBox>;
 export const CheckBox: Story = {
 	args: {
 		children: "复选",
-		name: "hobby",
-		value: "motion",
+		name: "checkbox",
+		value: "复选",
 		required: false,
 		disabled: false,
 		checked: false,

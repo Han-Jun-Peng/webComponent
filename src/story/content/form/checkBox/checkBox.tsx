@@ -9,6 +9,7 @@ interface CheckBoxProp {
 	required?: boolean;
 	disabled?: boolean;
 	checked?: boolean;
+	onChange?: (changeEvent: React.ChangeEvent) => void;
 }
 
 export const WBCheckBox = memo(function WBCheckBox({
@@ -18,6 +19,7 @@ export const WBCheckBox = memo(function WBCheckBox({
 	required = false,
 	disabled = false,
 	checked = false,
+	onChange,
 }: CheckBoxProp) {
 	if (name) {
 		if (typeof name !== "string") {
@@ -59,6 +61,14 @@ export const WBCheckBox = memo(function WBCheckBox({
 		}
 	}
 
+	if (onChange) {
+		if (typeof onChange !== "function") {
+			throw new Event(
+				`不能将${typeof onChange}类型, 赋值给boolean类型的onChange`,
+			);
+		}
+	}
+
 	const handlerKeyDown = useCallback((keyboardEvent: React.KeyboardEvent) => {
 		keyboardEvent.stopPropagation();
 		if (keyboardEvent.key == "Enter") {
@@ -68,7 +78,7 @@ export const WBCheckBox = memo(function WBCheckBox({
 	}, []);
 
 	return (
-		<label>
+		<label className="inline-block">
 			<WBFlex direction="horizontal" alignY="center" gap="small">
 				<input
 					type="checkbox"
@@ -80,6 +90,7 @@ export const WBCheckBox = memo(function WBCheckBox({
 					tabIndex={0}
 					className="focus:outline-2 focus:outline-blue-2 dark:focus:outline-blue-8 focus:outline-dashed focus:outline-offset-2 accent-blue-2 border border-black-3 dark:border-white-3"
 					onKeyDown={handlerKeyDown}
+					onChange={onChange}
 				/>
 				<WBP noWarp>{children}</WBP>
 			</WBFlex>
