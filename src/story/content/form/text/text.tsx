@@ -144,9 +144,9 @@ export const WBText = memo(function WBText({
 
 	// 失去焦点, 验证输入内容
 	const [patternResult, setPatternResult] = useState("");
-	const handlerBlur = useCallback(
-		(focusEvent: React.FocusEvent) => {
-			const input = focusEvent.currentTarget as HTMLInputElement;
+	const handlerInput = useCallback(
+		(formEvent: React.FormEvent) => {
+			const input = formEvent.currentTarget as HTMLInputElement;
 			const validityState = input.validity;
 
 			// 输入的内容为空时
@@ -171,11 +171,11 @@ export const WBText = memo(function WBText({
 	);
 
 	const className = [
-		"inline-block border border-black-3 dark:border-white-3 rounded invalid:border-red-6",
+		"inline-block px-4 py-2 border border-black-3 dark:border-white-3 rounded invalid:border-red-6 peer",
 	];
 
 	if (children) {
-		className.push("peer focus:rounded-b-none");
+		className.push(" focus:rounded-b-none");
 	}
 
 	return (
@@ -189,13 +189,13 @@ export const WBText = memo(function WBText({
 				maxLength={maxlength}
 				size={20}
 				placeholder={placeholder}
-				pattern={pattern}
+				pattern={pattern ? pattern : undefined}
 				required={required}
 				readOnly={readonly}
 				disabled={disabled}
 				tabIndex={0}
 				onChange={onChange}
-				onBlur={handlerBlur}
+				onInput={handlerInput}
 				className={className.join(" first-letter:")}
 				style={{ width: width + "px" }}
 			/>
@@ -214,7 +214,7 @@ export const WBText = memo(function WBText({
 				top="end-outside"
 				display="none"
 				displayHover="none"
-				displayFocus="inline-block"
+				displayFocus="block"
 			>
 				{children}
 			</WBPostiton>

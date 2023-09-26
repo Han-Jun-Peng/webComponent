@@ -121,7 +121,7 @@ export const WBPostiton = memo(function WBPostiton({
 			className.push("inline-block");
 			break;
 		case "block":
-			className.push("block");
+			className.push("block w-full");
 			break;
 		default:
 			throw new Event(
@@ -137,7 +137,7 @@ export const WBPostiton = memo(function WBPostiton({
 			className.push("peer-hover:inline-block group-hover:inline-block");
 			break;
 		case "block":
-			className.push("peer-hover:block group-hover:block");
+			className.push("peer-hover:block group-hover:block w-full");
 			break;
 		default:
 			throw new Event(
@@ -153,7 +153,7 @@ export const WBPostiton = memo(function WBPostiton({
 			className.push("peer-focus:inline-block group-focus:inline-block");
 			break;
 		case "block":
-			className.push("peer-focus:block group-focus:block");
+			className.push("peer-focus:block group-focus:block w-full");
 			break;
 		default:
 			throw new Event(

@@ -13,11 +13,14 @@ const meta = {
 				},
 			},
 		},
-		key: {
+		id: {
 			description: "配置li的key值",
 		},
 		dataId: {
 			description: "配置自定义的data-id",
+		},
+		dataValue: {
+			description: "配置自定义的data-value",
 		},
 		border: {
 			description: "是否启用边框样式",
@@ -50,7 +53,7 @@ type Story = StoryObj<typeof WBLi>;
 export const Li: Story = {
 	args: {
 		children: "li",
-		key: "1",
+		id: "1",
 		border: false,
 		noBackground: false,
 		isActive: false,

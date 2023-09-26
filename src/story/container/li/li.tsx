@@ -2,10 +2,11 @@ import React, { memo } from "react";
 
 interface LiProp {
 	children?: React.ReactNode;
-	key: string;
+	id: string;
 	dataId?: string;
-	onClick?: (mouseEvent?: React.MouseEvent) => void;
-	onClickCapture?: (mouseEvent?: React.MouseEvent) => void;
+	dataValue?: string;
+	onClick?: (mouseEvent: React.MouseEvent) => void;
+	onClickCapture?: (mouseEvent: React.MouseEvent) => void;
 	border?: boolean;
 	noBackground?: boolean;
 	isActive?: boolean;
@@ -13,8 +14,9 @@ interface LiProp {
 
 export const WBLi = memo(function WBLi({
 	children,
-	key,
+	id,
 	dataId,
+	dataValue,
 	onClick,
 	onClickCapture,
 	border = false,
@@ -24,6 +26,30 @@ export const WBLi = memo(function WBLi({
 	const className = [
 		"inline-block w-full h-full px-4 py-2 rounded shadow dark:shadow-white-2",
 	];
+
+	if (id) {
+		if (typeof id !== "string") {
+			throw new Event(`不能将${typeof id}类型, 赋值给string类型的id`);
+		}
+	} else {
+		throw new Event("缺少id属性, 这是必选项");
+	}
+
+	if (onClick) {
+		if (typeof onClick !== "function") {
+			throw new Event(
+				`不能将${typeof onClick}类型, 赋值给function类型的onClick`,
+			);
+		}
+	}
+
+	if (onClickCapture) {
+		if (typeof onClickCapture !== "function") {
+			throw new Event(
+				`不能将${typeof onClickCapture}类型, 赋值给function类型的onClickCapture`,
+			);
+		}
+	}
 
 	if (border) {
 		if (typeof border !== "boolean") {
@@ -57,8 +83,9 @@ export const WBLi = memo(function WBLi({
 
 	return (
 		<li
-			key={key}
+			key={id}
 			data-id={dataId}
+			data-value={dataValue}
 			onClick={onClick}
 			onClickCapture={onClickCapture}
 			className={className.join(" ")}

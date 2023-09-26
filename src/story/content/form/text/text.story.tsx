@@ -1,5 +1,7 @@
+import { WBDatalist } from "../datalist/datalist.tsx";
 import { WBText } from "./text.tsx";
 import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 
 const meta = {
 	title: "内容/表单/Text",
@@ -107,6 +109,16 @@ const meta = {
 type Story = StoryObj<typeof WBText>;
 export const Text: Story = {
 	args: {
+		children: (
+			<WBDatalist
+				option={[
+					{ id: "1", value: "苹果" },
+					{ id: "2", value: "梨" },
+					{ id: "3", value: "桃" },
+				]}
+				onClick={() => {}}
+			></WBDatalist>
+		),
 		id: "",
 		name: "text",
 		value: "",
