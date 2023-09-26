@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	input {
+		@apply font-sans font-normal text-base text-black-6 dark:text-white-6 selection:bg-blue-1 dark:selection:bg-blue-10 bg-black-1 dark:bg-white-1 outline-none;
+	}
+}

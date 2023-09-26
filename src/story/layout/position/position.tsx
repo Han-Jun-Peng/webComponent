@@ -18,6 +18,9 @@ interface PostitionProp {
 		| "end-inside"
 		| "end-outside"
 		| number;
+	display?: "none" | "inline-block" | "block";
+	displayHover?: "none" | "inline-block" | "block";
+	displayFocus?: "none" | "inline-block" | "block";
 }
 
 export const WBPostiton = memo(function WBPostiton({
@@ -25,6 +28,9 @@ export const WBPostiton = memo(function WBPostiton({
 	position = "relative",
 	left,
 	top,
+	display = "inline-block",
+	displayHover = "inline-block",
+	displayFocus = "inline-block",
 }: PostitionProp) {
 	const className: string[] = [];
 	const style: { left?: string; top?: string } = {};
@@ -104,6 +110,54 @@ export const WBPostiton = memo(function WBPostiton({
 			}
 			throw new Event(
 				`不能将${typeof top}类型, 赋值给 "start-outside"| "start-inside"| "center"| "end-inside"| "end-outside"类型的top`,
+			);
+	}
+
+	switch (display) {
+		case "none":
+			className.push("hidden");
+			break;
+		case "inline-block":
+			className.push("inline-block");
+			break;
+		case "block":
+			className.push("block");
+			break;
+		default:
+			throw new Event(
+				`不能将${typeof display}类型, 赋值给"none" | "inline-block" | "block"类型的display`,
+			);
+	}
+
+	switch (displayHover) {
+		case "none":
+			className.push("peer-hover:hidden group-hover:hidden");
+			break;
+		case "inline-block":
+			className.push("peer-hover:inline-block group-hover:inline-block");
+			break;
+		case "block":
+			className.push("peer-hover:block group-hover:block");
+			break;
+		default:
+			throw new Event(
+				`不能将${typeof displayHover}类型, 赋值给"none" | "inline-block" | "block"类型的displayHover`,
+			);
+	}
+
+	switch (displayFocus) {
+		case "none":
+			className.push("peer-focus:hidden group-focus:hidden");
+			break;
+		case "inline-block":
+			className.push("peer-focus:inline-block group-focus:inline-block");
+			break;
+		case "block":
+			className.push("peer-focus:block group-focus:block");
+			break;
+		default:
+			throw new Event(
+				`不能将${typeof displayFocus}类型, 赋值给"none" | "inline-block" | "block"类型的displayFocus`,
 			);
 	}
 

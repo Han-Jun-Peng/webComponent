@@ -18,7 +18,7 @@ const meta = {
 			description:
 				"配置定位类型: 1. 不定位, 2. 固定定位, 3. 粘性定位, 4. 相对定位, 5. 绝对定位",
 			table: {
-				type: {
+				defaultValue: {
 					summary: "relative",
 				},
 			},
@@ -26,18 +26,33 @@ const meta = {
 		left: {
 			description:
 				"配置水平位置: 1. 起点外侧, 2. 起点内侧, 3. 中心, 4. 终点内侧, 5. 终点外侧, 6.undefined",
-			table: {
-				type: {
-					summary: undefined,
-				},
-			},
 		},
 		top: {
 			description:
 				"配置垂直位置: 1. 起点外侧, 2. 起点内侧, 3. 中心, 4. 终点内侧, 5. 终点外侧, 6.undefined",
+		},
+		display: {
+			description: "配置元素为不显示, 行内块, 块",
 			table: {
-				type: {
-					summary: undefined,
+				defaultValue: {
+					summary: "inline-block",
+				},
+			},
+		},
+		displayHover: {
+			description: "配置父辈元素或兄弟元素悬停时, 此元素为不显示, 行内块, 块",
+			table: {
+				defaultValue: {
+					summary: "inline-block",
+				},
+			},
+		},
+		displayFocus: {
+			description:
+				"配置父辈元素或兄弟元素获得焦点时, 此元素为不显示, 行内块, 块",
+			table: {
+				defaultValue: {
+					summary: "inline-block",
 				},
 			},
 		},

@@ -1,11 +1,9 @@
-import React, { ReactNode, memo, useCallback, useState } from "react";
+import React, { ReactNode, memo } from "react";
 
 export interface PProp {
 	children?: ReactNode;
 	canSelect?: boolean;
 	isRetraction?: boolean;
-	contentEditable?: boolean;
-	setChildren?: (children: ReactNode) => void;
 	align?: "start" | "center" | "end";
 	noWarp?: boolean;
 }
@@ -14,8 +12,6 @@ export const WBP = memo(function WBP({
 	children,
 	canSelect = true,
 	isRetraction = false,
-	contentEditable = false,
-	setChildren,
 	align = "start",
 	noWarp = false,
 }: PProp) {
@@ -81,29 +77,5 @@ export const WBP = memo(function WBP({
 			throw new Event(`不能将${typeof noWarp}类型, 赋值给boolean类型的noWarp`);
 	}
 
-	const [value, setValue] = useState(children);
-
-	const handlerBlur = useCallback(
-		(fouceEvent: React.FocusEvent) => {
-			const p = fouceEvent.target as HTMLParagraphElement;
-			setValue(p.innerText);
-
-			if (setChildren) {
-				setChildren(p.innerText);
-			}
-		},
-		[setValue, setChildren],
-	);
-
-	return (
-		<p
-			contentEditable={contentEditable}
-			inputMode="text"
-			className={className.join(" ")}
-			onBlur={handlerBlur}
-			suppressContentEditableWarning
-		>
-			{value}
-		</p>
-	);
+	return <p className={className.join(" ")}>{children}</p>;
 });
