@@ -13,6 +13,10 @@ const meta = {
 			description:
 				"配置点击事件处理函数(可通过event.currentTarget.dataset.id 或event.currentTarget.dataset.value 获取被点击的值)",
 		},
+		inputValue: {
+			description:
+				"配置关联的表单元素input的当前输入值, 用于过滤datalist显示内容",
+		},
 	},
 } satisfies Meta<typeof WBDatalist>;
 
@@ -25,6 +29,7 @@ export const Datalist: Story = {
 			{ id: "3", value: "腾讯视频" },
 		],
 		onClick: () => {},
+		inputValue: "优酷",
 	},
 };
 
